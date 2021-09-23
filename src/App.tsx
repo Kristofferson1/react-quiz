@@ -1,13 +1,34 @@
-import React from "react";
+import React, {Component} from "react";
 import Quiz from "./components/Quiz";
+import {connect} from "react-redux";
 
-function App() {
+class App extends Component <any, any> {
+  render() {
   return (
     <div className="App">
-      {/*  */}
-      <Quiz />
+      <button onClick={this.props.show}>show</button>
+      <button onClick={this.props.load}>load</button>
+      {/* <Quiz questions={this.props.fill}/> */}
     </div>
   );
+  }
 }
 
-export default App;
+const mapStateToProps = (state: any) => {
+  return {
+    questions: state.questions
+  };
+};
+
+const mapDispachToProps = (dispatch: any) => {
+  return {
+    load: () => dispatch({ type: "loadQuestions", points: 0 }),
+    show: () => dispatch({ type: "showQuestions", points: 0 }),
+    fill: () => dispatch({ type: "fillQuestions", points: 0 })
+
+  };
+};
+export default connect(
+  mapStateToProps,
+  mapDispachToProps
+)(App);
