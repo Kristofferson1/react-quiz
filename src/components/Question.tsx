@@ -1,11 +1,19 @@
 import React, { Component, useState } from "react";
+import styled from "styled-components";
+
+const Item = styled.div`
+  background: #343744;
+  border-radius: 10px;
+  padding: 14px;
+  margin-bottom: 7px;
+`;
+
 
 const Question = ({ question, id }: any) => {
   const [checked, setChecked] = useState("");
 
   return (
-    <div className="question">
-      <p>Question number {id}</p>
+    <Item className="question">
       <p>{question}</p>
       <div className="answers">
         {" "}
@@ -36,7 +44,7 @@ const Question = ({ question, id }: any) => {
           </div>
         </form>
       </div>
-    </div>
+    </Item>
   );
 };
 

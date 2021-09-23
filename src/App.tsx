@@ -1,14 +1,15 @@
 import React, {Component} from "react";
 import Quiz from "./components/Quiz";
 import {connect} from "react-redux";
+import "./App.css";
 
 class App extends Component <any, any> {
   render() {
   return (
     <div className="App">
-      <button onClick={this.props.show}>show</button>
-      <button onClick={this.props.load}>load</button>
-      {/* <Quiz questions={this.props.fill}/> */}
+      {/* <button onClick={this.props.show}>show</button>
+      <button onClick={this.props.load}>load</button> */}
+      <Quiz items={this.props.fill}/>
     </div>
   );
   }
