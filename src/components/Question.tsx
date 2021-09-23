@@ -1,10 +1,11 @@
 import React, { Component, useState } from "react";
 
-const Question = ({ question }: any) => {
-  const [checked, setChecked] = useState("True");
+const Question = ({ question, id }: any) => {
+  const [checked, setChecked] = useState("");
 
   return (
     <div className="question">
+      <p>Question number {id}</p>
       <p>{question}</p>
       <div className="answers">
         {" "}

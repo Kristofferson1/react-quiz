@@ -1,9 +1,11 @@
 import { useState } from "react";
 import Question from "./Question";
+import Submit from "./Submit";
 
 const Quiz = () => {
   const questions = [
     {
+      id: 0,
       category: "General Knowledge",
       type: "boolean",
       difficulty: "easy",
@@ -12,6 +14,7 @@ const Quiz = () => {
       incorrect_answers: ["False"],
     },
     {
+      id: 1,
       category: "General Knowledge",
       type: "boolean",
       difficulty: "easy",
@@ -20,6 +23,7 @@ const Quiz = () => {
       incorrect_answers: ["False"],
     },
     {
+      id: 2,
       category: "General Knowledge",
       type: "boolean",
       difficulty: "easy",
@@ -29,6 +33,13 @@ const Quiz = () => {
     },
   ];
 
-  return <Question question={questions[1].question} />;
+  return (
+    <>
+     { questions.map((item) => <Question question={item.question} id={item.id} />) 
+     }
+    <Submit />
+    </>
+  );
 };
+
 export default Quiz;
