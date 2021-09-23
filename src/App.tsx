@@ -1,11 +1,11 @@
 import React from "react";
-import Question from "./components/Question";
+import Quiz from "./components/Quiz";
 
 function App() {
   return (
     <div className="App">
       {/*  */}
-      <Question />
+      <Quiz />
     </div>
   );
 }
