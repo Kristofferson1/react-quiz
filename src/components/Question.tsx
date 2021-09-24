@@ -1,4 +1,4 @@
-import React, { Component, useState } from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 
 const Item = styled.div`
@@ -7,7 +7,6 @@ const Item = styled.div`
   padding: 14px;
   margin-bottom: 7px;
 `;
-
 
 const Question = ({ question, id }: any) => {
   const [checked, setChecked] = useState("");
@@ -23,7 +22,7 @@ const Question = ({ question, id }: any) => {
               <input
                 type="radio"
                 value="True"
-                checked={checked == "True"}
+                checked={checked === "True"}
                 onClick={() => {
                   setChecked("True");
                 }}
@@ -36,7 +35,7 @@ const Question = ({ question, id }: any) => {
               <input
                 type="radio"
                 value="False"
-                checked={checked == "False"}
+                checked={checked === "False"}
                 onClick={() => setChecked("False")}
               />
               False
